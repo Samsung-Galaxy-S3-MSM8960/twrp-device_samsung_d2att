@@ -20,29 +20,42 @@
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
+DEVICE_PATH := device/samsung/d2att
 
-# inherit from common D2
--include device/samsung/d2-common/BoardConfigCommon.mk
+# For building with TWRP minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
 
-# inherit from the proprietary version
--include vendor/samsung/d2att/BoardConfigVendor.mk
+# Architecture
+TARGET_ARCH := arm 
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a   
+TARGET_CPU_ABI2 := armeabi                  
+TARGET_CPU_VARIANT := generic                
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := d2att
 
 # Kernel
-TARGET_PREBUILT_KERNEL      := device/samsung/d2att/kernel
-BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom user_debug=31
-BOARD_KERNEL_BASE           := 0x80200000
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/zImage
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31
+BOARD_KERNEL_BASE := 0x80200000
 BOARD_FORCE_RAMDISK_ADDRESS := 0x81500000
-BOARD_KERNEL_PAGESIZE       := 2048
+BOARD_KERNEL_PAGESIZE := 2048
 
+# Platform
+TARGET_BOARD_PLATFORM := msm8960
+
+# File systems
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+# Hack: prevent anti rollback. Is it really necessary in our case?
+PLATFORM_SECURITY_PATCH := 2099-12-31
+PLATFORM_VERSION := 16.1.0
 
 #TWRP
 TW_THEME := portrait_hdpi
