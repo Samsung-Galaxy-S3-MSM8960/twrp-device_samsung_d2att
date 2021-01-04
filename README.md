@@ -1,4 +1,4 @@
-#TWRP device configuration for Galaxy S3 (Qualcomm Variants)
+# TWRP device configuration for Galaxy S3 (Qualcomm Variants)
 
 Copyright 2021 - Alexenferman
 
@@ -9,8 +9,6 @@ To build using the minimal TWRP manifest:
 lunch omni_d2att-eng
 make -j4 recoveryimage
 ```
-
-=====================================
 
 Basic   | Spec Sheet
 -------:|:-------------------------
