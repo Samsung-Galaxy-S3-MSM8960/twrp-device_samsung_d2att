@@ -7,7 +7,7 @@ To build using the minimal TWRP manifest:
 ```sh
 . build/envsetup.sh
 lunch omni_d2att-eng
-make -j4 recoveryimage
+make -j16 recoveryimage
 ```
 
 Basic   | Spec Sheet
