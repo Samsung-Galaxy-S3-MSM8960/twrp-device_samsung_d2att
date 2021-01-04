@@ -1,7 +1,13 @@
+#TWRP device configuration for Galaxy S3 (Qualcomm Variants)
 
-Copyright 2020 - Alexenferman
+Copyright 2021 - Alexenferman
 
-TWRP device configuration for Galaxy S3 (Qualcomm Variants)
+To build using the minimal TWRP manifest:
+
+`. build/envsetup.sh
+lunch omni_d2att-eng
+make -j4 recoveryimage`
+
 =====================================
 
 Basic   | Spec Sheet
@@ -12,11 +18,9 @@ GPU     | Adreno 225
 Memory  | 2GB RAM
 Shipped Android Version | 4.4.2
 Storage | 16/32GB
-MicroSD | Up to 64GB
+MicroSD | Up to 128GB
 Battery | 2100 mAh
-Dimensions | 136.6 x 70.6 x 8.6 mm
 Display | 720 x 1080 pixels, Super AMOLED
-Camera  | 8 MP, 3264 x 2448 pixels
 Release Date | July 2012
 
 
