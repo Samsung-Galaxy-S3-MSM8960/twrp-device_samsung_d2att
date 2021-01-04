@@ -5,7 +5,9 @@ Copyright 2021 - Alexenferman
 To build using the minimal TWRP manifest:
 
 `. build/envsetup.sh
+
 lunch omni_d2att-eng
+
 make -j4 recoveryimage`
 
 =====================================
